@@ -2,7 +2,7 @@
 
 
 
-# 一次Spring Bean初始化顺序问题排查记录 @DependsOn
+# 一次spring bean初始化顺序问题排查记录 @DependsOn
 
 ## 问题重现
 
