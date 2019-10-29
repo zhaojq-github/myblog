@@ -30,8 +30,6 @@
 
 　　OGNL使用的是一种链式的风格进行对象的访问。具体代码如下：
 
-
-
 ```java
     @Test
     public void testOgnl()
