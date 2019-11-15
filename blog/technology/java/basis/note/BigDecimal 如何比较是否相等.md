@@ -1,6 +1,10 @@
+[TOC]
+
+
+
 # BigDecimal 如何比较是否相等
 
-例子：
+## 例子：
 
 ```
 BigDecimal a = new BigDecimal("2.00");
@@ -12,7 +16,7 @@ System.out.println(a.equals(b));
 
 原因是：BigDecimal比较时，不仅比较值，而且还比较精度？？？
 
-解决方法：
+## 解决方法：
 
 ```
 BigDecimal a = new BigDecimal("2.00").setScale(2,BigDecimal.ROUND_HALF_DOWN);
