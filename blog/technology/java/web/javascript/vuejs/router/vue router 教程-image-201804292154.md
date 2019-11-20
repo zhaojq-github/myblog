@@ -429,7 +429,7 @@ export default new Router({
 })
 ```
 
-上边的代码我们编写了两个路径，一个是默认的‘/’，另一个是’/Hi’.在两个路径下的components里面，我们对三个区域都定义了显示内容。
+上边的代码我们编写了两个路径，一个是默认的'/’，另一个是’/Hi’.在两个路径下的components里面，我们对三个区域都定义了显示内容。
 
 定义好后，我们需要在component文件夹下，新建Hi1.vue和Hi2.vue页面就可以了。
 
@@ -884,7 +884,7 @@ export default {
 router.go(1):代表着前进，用法和后退一样，我在这里就不重复码字了（码字辛苦希望大家理解）。
 
 ```
-this.$router.push(‘/xxx ‘)
+this.$router.push('/xxx')
 ```
 
 这个编程式导航都作用就是跳转，比如我们判断用户名和密码正确时，需要跳转到用户中心页面或者首页，都用到这个编程的方法来操作路由。
@@ -897,7 +897,7 @@ this.$router.push(‘/xxx ‘)
 <button @click="goHome">回到首页</button>
 ```
 
-2.在<script>模块里加入goHome方法，并用this.$router.push(‘/’)导航到首页
+2.在<script>模块里加入goHome方法，并用this.$router.push('/’)导航到首页
 
 ```
 export default {
