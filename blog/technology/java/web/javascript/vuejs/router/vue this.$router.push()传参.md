@@ -20,7 +20,6 @@ this.$router.push({name: 'dispatch', params: {paicheNo: obj.paicheNo}})
 
 ```js
 this.$route.params.paicheNo
-this.$route.params.paicheNo
 ```
 
 ## 2 query传参
@@ -32,7 +31,6 @@ this.$router.push({path: '/transport/dispatch', query: {paicheNo: obj.paicheNo}}
 取数据：
 
 ```js
-this.$route.query.paicheNo
 this.$route.query.paicheNo
 ```
 
