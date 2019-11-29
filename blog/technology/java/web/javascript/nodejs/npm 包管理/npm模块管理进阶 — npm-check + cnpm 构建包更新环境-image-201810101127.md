@@ -1,6 +1,10 @@
+[TOC]
+
+
+
 # npm模块管理进阶 — npm-check + cnpm 构建包更新环境
 
-# 前言
+## 前言
 
 近期在项目中准备更新一下`npm`依赖包，可一尝试，惊了！批量更新还真麻烦。各种包要挨个更新，就算直接更改`package.json`也挺费事。
 于是度娘到了`npm-check`，然后琢磨了一下，结合`cnpm`构建了一个本人很满意的包更新环境。遂决定写一篇博文，分享给大家。
@@ -8,7 +12,7 @@
 本文为我个人理解，一家之言，如有不当或错误的地方欢迎大家指正，谢谢！ 
 博文地址：[npm模块管理进阶 — npm-check + cnpm 构建包更新环境](http://xiongqi-xq.github.io/2017/09/09/npm-check-cnpm/)
 
-# 1.[ npm-check](https://www.npmjs.com/package/npm-check)
+## 1.[ npm-check](https://www.npmjs.com/package/npm-check)
 
 `npm` 是node下的包管理工具，给我们提供了强大的包管理功能，简化了项目的代码部署过程。但是，`npm`也不是尽善尽美，批量更新时便很捉急。
 `npm-check`便应运而生。
@@ -22,14 +26,14 @@
 
 ![npm-check](image-201810101127/bVUCwf.png)
 
-## 1.1 `npm-check`安装
+### 1.1 `npm-check`安装
 
 ```
 > npm install -g npm-check //全局安装。项目下安装可自行选择
 > npm install npm-check    //项目下安装，项目根目录执行
 ```
 
-## 1.2 `npm-check`项目依赖包更新
+### 1.2 `npm-check`项目依赖包更新
 
 （1）查看包更新信息，会有小黄脸提示你包的相关情况（需更新，缺失，错误以及未使用等）（表情包大牛。。。）
 
@@ -59,7 +63,7 @@
 -E, --save-exact   将确切的包版本存至"package.json"(注意，此命令将存储'x.y.z'而不是'^x.y.z')
 ```
 
-## 1.3 `npm-check`的问题
+### 1.3 `npm-check`的问题
 
 `npm-check`更新包时是根据版本号动态生成更新语句并执行。其本质是仍然`npm install`指令：
 
@@ -68,7 +72,7 @@
 所以，问题不是`npm install`，而是国内的问题。介于网络等因素，国内用户更倾向于使用`cnpm`,`cnpm`也比较稳定和快速。
 下面就介绍如何使用让`npm-check`使用`cnpm`执行更新。
 
-# 3.`npm-check` + `cnpm`
+## 3.`npm-check` + `cnpm`
 
 [cnpm](https://cnpmjs.org/) 是阿里提供的一个完整 [npmjs.org](https://www.npmjs.com/) 镜像，便于国内用户使用`npm`。这里就不过多赘述了。
 准备:安装好`cnpm`,`npm-check`
@@ -76,7 +80,7 @@
 
 ------
 
-## 3.1 两种方法简述
+### 3.1 两种方法简述
 
 **1. 源码修改法**
 
@@ -91,7 +95,7 @@ installer: process.env.NPM_CHECK_INSTALLER || 'cnpm' //改后
 **2.修改环境变量值**
 将`NPM_CHECK_INSTALLER`设为`cnpm`。后文将介绍三种修改方法，效果有些差别。
 
-## 3.2 两种方法原理
+### 3.2 两种方法原理
 
 **1. 源码修改法**
 
@@ -345,12 +349,12 @@ installer: process.env.NPM_CHECK_INSTALLER || 'npm'
 注意：
 **使用cross-env时使用&&会改变前后语句环境**，即每一语句段都有自己的环境，即环境变量设置会失效。慎用`&&`。
 
-# 4.总结
+## 4.总结
 
 本文首先简单介绍了`npm-check`及其用法，然后介绍了如何结合`cnpm`进行`cnpm install`以及方法的原理。
 至此，结合了`npm-check`模块更新工具和`cnpm`国内镜像，在模块更新的操作和速度上都已获得提升，模块更新环境搭建完毕！
 
-# 5.后记
+## 5.后记
 
 断断续续写了也快一天了，写完之后校对，一下子都快1点钟了，感觉还在早上刚开始写的时候一样。总算是写完了这篇博文。
 其实这是我第一篇正式意义上的博文，莫名地感觉有种莫名的感觉，写完之后还有点不舍..W(￣_￣)W，但总归是完成了自己的写作，还是很开心的！

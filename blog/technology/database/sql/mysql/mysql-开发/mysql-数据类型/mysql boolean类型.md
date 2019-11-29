@@ -87,9 +87,6 @@ SQL
 ```
 INSERT INTO tasks(title,completed)
 VALUES('Test Boolean with a number',2);
-
-
-SQL
 ```
 
 上面语句，工作正常~，查询`tasts`表中的数据，如下所示 -
@@ -106,10 +103,7 @@ FROM
 |  2 | Design database table      |         0 |
 |  3 | Test Boolean with a number |         2 |
 +----+----------------------------+-----------+
-3 rows in set
-
-
-SQL
+3 rows in set 
 ```
 
 如果要将结果输出为`true`和`false`，可以使用[IF](http://www.yiibai.com/mysql/if-function.html)函数，如下所示：
