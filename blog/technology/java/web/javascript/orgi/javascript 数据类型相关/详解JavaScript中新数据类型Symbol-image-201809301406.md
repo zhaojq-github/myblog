@@ -50,7 +50,7 @@ Symbol() 用于解决属性名的冲突。比如，对于同一个对象 obj，A
 
 举个应用场景，比如一个人名叫“张三”，他可能拥有两个国家甚至更多国家的国籍，因此会有多个身份 Id号。此时我们直观的做法就是加 Id 属性：
 
-```
+```js
 var person = {
 name: "zhangsan",
 id: "xttblog", // 可能多个
@@ -60,7 +60,7 @@ age: 20
 
 也会有人说，用数组就好，那每个国家的 id 怎么获取？
 
-```
+```js
 var person = {
 name: "zhangsan",
 id: ["xttblog.com", 'codedq.net'] // 哪个是中国人身份证的 id ？
@@ -72,7 +72,7 @@ age: 20
 `Symbol('key') === Symbol('key') // false, 因为Symbol('key')`
 Symbol(‘key’) 两次的返回值是不同的，且是独一无二的值。现在解决上面的问题。
 
-```
+```js
 var person = {
 name: "zhangsan",
 age: 20
