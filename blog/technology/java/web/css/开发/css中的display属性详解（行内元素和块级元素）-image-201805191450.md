@@ -19,7 +19,7 @@
 
 那么，`display`:**inline**、`display`:**block**和`display`:**inline-block**有什么区别呢？
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>

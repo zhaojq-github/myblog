@@ -12,7 +12,7 @@
 
 html部分
 
-```
+```html
 <div class="vue">
     <!-- 组件绑定了一个事件 -->
     <test-component v-on:on-ok="ok"></test-component>
@@ -21,7 +21,7 @@ html部分
 
 js部分
 
-```
+```js
 //组件定义
 var tc = {
     template: '<div><button v-on:click="ok">click ok</button></div>',
@@ -71,7 +71,7 @@ ok: function(callback){
 
 //组件定义
 
-```
+```js
 var tc = {
     template: '<div><button v-on:click="ok">click ok</button></div>',
     methods: {
