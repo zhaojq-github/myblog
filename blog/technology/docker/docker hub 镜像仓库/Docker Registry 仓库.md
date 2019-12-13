@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 ## Docker Registry 
 
 镜像构建完成后，可以很容易的在当前宿主上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，[Docker Registry](https://docs.docker.com/registry/) 就是这样的服务。

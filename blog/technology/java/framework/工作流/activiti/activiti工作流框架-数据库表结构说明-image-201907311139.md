@@ -33,8 +33,6 @@ activity一共23张表
   5.BYTES_:大文本类型，存储文本字节流
   ```
 
-  
-
 - act_ge_property：属性数据表，存储这整个流程引擎级别的数据。在初始化表结构时，会默认插入三条记录。
 
   ```
@@ -43,7 +41,6 @@ activity一共23张表
   3.REV_INT:版本号
   ```
 
-  
 
 ------
 
@@ -67,8 +64,6 @@ activity一共23张表
   11.DURATION : 经过时长
   ```
 
-  
-
 - act_hi_attachment：历史附件表
 
 - act_hi_comment：历史意见表
@@ -84,8 +79,6 @@ activity一共23张表
   8.MESSAGE_ : 处理意见
   9.FULL_MSG_ :
   ```
-
-  
 
 - act_hi_detail：历史详情表，启动流程或者在任务complete之后,记录历史流程变量
 
@@ -107,8 +100,6 @@ activity一共23张表
   15.TEXT2_:
   ```
 
-  
-
 - act_hi_identitylink：历史流程人员表
 
 - act_hi_procinst： 历史流程实例表
@@ -127,8 +118,6 @@ activity一共23张表
   11.SUPER_PROCESS_INSTANCE_ID_ : 父流程流程id
   12.DELETE_REASON_ : 从运行中任务表中删除原因
   ```
-
-  
 
 - act_hi_taskinst： 历史任务实例表
 
@@ -151,8 +140,6 @@ activity一共23张表
   16.DUE_DATE_ :
   ```
 
-  
-
 - act_hi_varinst：历史变量表
 
 ------
@@ -170,8 +157,6 @@ activity一共23张表
   4.TYPE_:用户组类型
   ```
 
-  
-
 - act_id_info：用户扩展信息表
 
 - act_id_membership：用户与用户组对应信息表，用来保存用户的分组信息
@@ -180,8 +165,6 @@ activity一共23张表
   1.USER_ID_:用户名
   2.GROUP_ID_:用户组名
   ```
-
-  
 
 - act_id_user：用户信息表
 
@@ -194,7 +177,6 @@ activity一共23张表
   6.PWD_:密码
   ```
 
-  
 
 ------
 
@@ -209,8 +191,6 @@ activity一共23张表
   2.NAME_:部署包的名称
   3.DEPLOY_TIME_:部署时间
   ```
-
-  
 
 - act_re_model 流程设计模型部署表
 
@@ -228,7 +208,6 @@ activity一共23张表
   9.HAS_START_FROM_KEY_:是否有Start From Key
   ```
 
-  
 
 *注：此表和ACT_RE_DEPLOYMENT是多对一的关系，即，一个部署的bar包里可能包含多个流程定义文件，每个流程定义文件都会有一条记录在ACT_REPROCDEF表内，每个流程定义的数据，都会对于ACT_GE_BYTEARRAY表内的一个资源文件和PNG图片文件。和ACT_GE_BYTEARRAY的关联是通过程序用ACT_GE_BYTEARRAY.NAME与ACT_RE_PROCDEF.NAME_完成的，在数据库表结构中没有体现。*
 
@@ -259,8 +238,6 @@ activity一共23张表
   14.SUSPENSION_STATE_：是否暂停。
   ```
 
-  
-
 - act_ru_identitylink：运行时流程人员表，主要存储任务节点与参与者的相关信息
 
   ```
@@ -271,8 +248,6 @@ activity一共23张表
   5.USER_ID_： 用户id
   6.TASK_ID_： 任务id
   ```
-
-  
 
 - act_ru_job
 
@@ -296,8 +271,6 @@ activity一共23张表
   15.DUE_TIME_：审批时长
   ```
 
-  
-
 - act_ru_variable：运行时流程变量数据表
 
   ```
@@ -315,7 +288,6 @@ activity一共23张表
   12.TEXT2_：
   ```
 
-  
 
 ------
 
