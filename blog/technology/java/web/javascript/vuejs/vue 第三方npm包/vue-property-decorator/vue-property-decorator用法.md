@@ -223,15 +223,30 @@ onChangeValue(newVal: Person, oldVal: Person){
 
 ### @Prop
 
-我们在使用`Vue`时有时会遇到子组件接收父组件传递来的参数.我们需要定义`Prop`属性.
+**@Prop(options: (PropOptions | Constructor[] | Constructor) = {})**
 
-比如子组件从父组件接收三个属性`propA`,`propB`,`propC`.
+`@Prop`装饰器接收一个参数，这个参数可以有三种写法：
 
-- `propA`类型为`Number`
-- `propB`默认值为`default value`
-- `propC`类型为`String`或者`Boolean`
+- `Constructor`，例如`String`，`Number`，`Boolean`等，指定 prop 的类型
+- `Constructor[]`，指定 prop 的可选类型
+- `PropOptions`，可以使用以下选项：`type`，`default`，`required`，`validator`
 
-```css
+```
+import { Vue, Component, Prop } from 'vue-property-decorator'
+
+@Componentexport default class MyComponent extends Vue {
+  @Prop(String) propA: string | undefined
+  @Prop([String, Number]) propB!: string | number
+  @Prop({
+    type: String,
+    default: 'abc'
+  })
+  propC!: string
+```
+
+使用js写法
+
+```
 export default {
   props: {
     propA: {
@@ -242,31 +257,65 @@ export default {
     },
     propC: {
       type: [String, Boolean]
-    },
+    }
   }
 }
 ```
 
-我们使用`vue-property-decorator`提供的`@Prop`可以将上面的代码改造为如下:
+**注意：**
 
-```dart
-<script lang="ts">
-    import {Vue, Component, Prop} from 'vue-property-decorator';
+- **属性的ts类型后面需要加上undefined类型；或者在****属性名后面加上!，表示非**`**null**` **和 非**`**undefined**` **的断言，否则编译器会给出错误提示**
+- **指定默认值必须使用上面例子中的写法，如果直接在属性名后面赋值，会重写这个属性，并且会报错**
 
-    @Component({})
-    export default class "组件名" extends Vue{
-        @Prop(Number) propA!: number;
-        @Prop({default: 'default value'}) propB!: string;
-        @propC([String, Boolean]) propC: string | boolean;
-    }
-</script>
+链接：https://juejin.im/post/5d31907a51882557af271be2
+
+### @PropSync
+
+**@PropSync(propName: string, options: (PropOptions | Constructor[] | Constructor) = {})**
+
+`@PropSync`装饰器与`@prop`用法类似，二者的区别在于：
+
+- `@PropSync` 装饰器接收两个参数
+  `propName: string`  表示父组件传递过来的属性名
+  `options: Constructor | Constructor[] | PropOptions` 与`@Prop`的第一个参数一致
+- `@PropSync` 会生成一个新的计算属性
+
+```
+import { Vue, Component, PropSync } from 'vue-property-decorator'
+@Component
+export default class MyComponent extends Vue {
+  @PropSync('propA', { type: String, default: 'abc' }) syncedPropA!: string
+}
 ```
 
-> 这里 `!`和可选参数`?`是相反的, `!`告诉`TypeScript`我这里一定有值.
+使用js写法
 
-- 总结: `@Prop`接受一个参数可以是类型变量或者对象或者数组.`@Prop`接受的类型比如`Number`是`JavaScript`的类型,之后定义的属性类型则是`TypeScript`的类型.
+```
+export default {
+  props: {
+    propA: {
+      type: String,
+      default: 'abc'
+    }
+  },
+  computed: {
+    syncedPropA: {
+      get() {
+        return this.propA
+      },
+      set(value) {
+        this.$emit('update:propA', value)
+      }
+    }
+  }
+}复制代码
+```
 
-------
+**@PropSync需要配合父组件的.sync修饰符使用**
+
+<https://juejin.im/post/5d31907a51882557af271be2>
+
+
 
 ### Mixins
 

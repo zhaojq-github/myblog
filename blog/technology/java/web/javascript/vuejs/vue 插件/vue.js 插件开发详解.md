@@ -72,7 +72,7 @@ export default {
 
 ## 开发 vue-toast
 
-需求：在组件中通过调用 this.$toast('网络请求失败') 来弹出提示，默认在底部显示。可以通过调用 this.$toast.top() 或 this.$toast.center() 等方法来实现在不同位置显示。
+需求：在组件中通过调用 this.\$toast('网络请求失败') 来弹出提示，默认在底部显示。可以通过调用 this.\$toast.top() 或 this.$toast.center() 等方法来实现在不同位置显示。
 
 整理一下思路，弹出提示的时候，我可以在 body 中添加一个 div 用来显示提示信息，不同的位置我通过添加不同的类名来定位，那就可以开始写了。
 
@@ -116,7 +116,7 @@ Vue.prototype.$toast = (tips,type) => {     // 添加 type 参数
 }
 ```
 
-好像差不多了。但是如果我想默认在顶部显示，我每次都要调用 this.$toast.top() 好像就有点多余了，我能不能 this.​$toast() 就直接在我想要的地方呢？还有我不想要 2.5s 后才消失呢？这时候注意到 Toast.install(Vue,options) 里的 options 参数，我们可以在 Vue.use() 通过 options 传进我们想要的参数。最后修改插件如下：
+好像差不多了。但是如果我想默认在顶部显示，我每次都要调用 this.\$toast.top() 好像就有点多余了，我能不能 this.​$toast() 就直接在我想要的地方呢？还有我不想要 2.5s 后才消失呢？这时候注意到 Toast.install(Vue,options) 里的 options 参数，我们可以在 Vue.use() 通过 options 传进我们想要的参数。最后修改插件如下：
 
 ```js
 var Toast = {};
