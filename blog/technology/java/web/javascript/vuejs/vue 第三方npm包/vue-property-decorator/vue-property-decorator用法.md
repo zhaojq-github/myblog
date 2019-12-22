@@ -231,7 +231,7 @@ onChangeValue(newVal: Person, oldVal: Person){
 - `Constructor[]`，指定 prop 的可选类型
 - `PropOptions`，可以使用以下选项：`type`，`default`，`required`，`validator`
 
-```
+```ts
 import { Vue, Component, Prop } from 'vue-property-decorator'
 
 @Componentexport default class MyComponent extends Vue {
@@ -246,7 +246,7 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
 
 使用js写法
 
-```
+```js
 export default {
   props: {
     propA: {
@@ -264,7 +264,7 @@ export default {
 
 **注意：**
 
-- **属性的ts类型后面需要加上undefined类型；或者在****属性名后面加上!，表示非**`**null**` **和 非**`**undefined**` **的断言，否则编译器会给出错误提示**
+- **属性的ts类型后面需要加上undefined类型；或者在**属性名后面加上!，表示非**`**null**` **和 非**`**undefined**` **的断言，否则编译器会给出错误提示
 - **指定默认值必须使用上面例子中的写法，如果直接在属性名后面赋值，会重写这个属性，并且会报错**
 
 链接：https://juejin.im/post/5d31907a51882557af271be2
