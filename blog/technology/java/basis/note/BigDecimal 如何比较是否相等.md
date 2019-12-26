@@ -6,7 +6,7 @@
 
 ## 例子：
 
-```
+```java
 BigDecimal a = new BigDecimal("2.00");
 BigDecmial b = new BigDecimal(2);
 System.out.println(a.equals(b));
@@ -18,9 +18,9 @@ System.out.println(a.equals(b));
 
 ## 解决方法：
 
-```
-BigDecimal a = new BigDecimal("2.00").setScale(2,BigDecimal.ROUND_HALF_DOWN);
-BigDecmial b = new BigDecimal(2).setScale(2,BigDecimal.ROUND_HALF_DOWN);
+```java
+BigDecimal a = new BigDecimal("2.00").setScale(2,BigDecimal.ROUND_HALF_UP);
+BigDecmial b = new BigDecimal(2).setScale(2,BigDecimal.ROUND_HALF_UP);
 System.out.println(a.equals(b));
 ```
 
@@ -31,7 +31,7 @@ System.out.println(a.equals(b));
 ROUND_HALF_UP: 遇到.5的情况时往上近似,例: 1.5 ->;2
 ROUND_HALF_DOWN : 遇到.5的情况时往下近似,例: 1.5 ->;1
 
-```
+```java
 BigDecimal a = new BigDecimal(1.5);
 System.out.println("down="+a.setScale(0,BigDecimal.ROUND_HALF_DOWN)+"\tup="+a.setScale(0,BigDecimal.ROUND_HALF_UP));
 ```
