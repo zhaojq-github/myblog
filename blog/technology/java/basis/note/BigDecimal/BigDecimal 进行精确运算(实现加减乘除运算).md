@@ -1,19 +1,21 @@
 # 使用BigDecimal进行精确运算(实现加减乘除运算)
 
+**推荐使用 hutool 的 NumberUtil做精确运算**
+
 这篇文章主要介绍了如何使用BigDecimal进行精确运算，最后提供了一个工具类，该工具类提供加，减，乘，除运算
 
 首先我们先来看如下代码示例：
 
 代码如下:
 
-```
+```java
 public class Test_1 {
-public static void main(String[] args) {
-System.out.println(0.06+0.01);
-System.out.println(1.0-0.42);
-System.out.println(4.015*100);
-System.out.println(303.1/1000);
-}
+    public static void main(String[] args) {
+        System.out.println(0.06+0.01);
+        System.out.println(1.0-0.42);
+        System.out.println(4.015*100);
+        System.out.println(303.1/1000);
+    }
 }
 ```
 
