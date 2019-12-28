@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 # vue-element-admin升级到Element-UI 2.0.1后：点击按钮有蓝色边框显示
 
 折腾：
@@ -96,6 +100,14 @@ src/styles/index.scss
 即可。
 
 表示：当各种组件，包括此处的按钮，（被点击后）获得焦点时，外部边框为空（不显示蓝色边框）。
+
+## 主要问题
+
+**主要问题是更新了element-ui版本没有升级对应皮肤**
+
+
+
+
 
 转载请注明：[在路上](https://www.crifan.com/) » [【已解决】vue-element-admin升级到Element-UI 2.0.1后：点击按钮有蓝色边框显示](https://www.crifan.com/vue_element_admin_upgrade_to_element_ui_2_0_1_click_button_show_blue_frame_border/)
 
