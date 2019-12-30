@@ -2,7 +2,7 @@
 
 
 
-# Maven生成可以直接运行的jar包的多种方式
+# java maven 打包生成可执行jar包的多种方式
 
 代码位置:/Users/jerryye/backup/studio/AvailableCode/Project-build-tool/maven/Maven生成可以直接运行的jar包的多种方式/maven-packagejar-demo
 
