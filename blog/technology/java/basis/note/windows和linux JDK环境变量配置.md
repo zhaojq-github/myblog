@@ -41,4 +41,5 @@ JAVA_HOME=/usr/local/java/jdk1.7.0_67
 PATH=$PATH:$JAVA_HOME/bin
 CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export JAVA_HOME CLASSPATH PATH
+export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 ```
