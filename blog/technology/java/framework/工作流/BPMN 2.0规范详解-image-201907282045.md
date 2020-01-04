@@ -657,17 +657,16 @@ List<Task> tasks = taskService.findPersonalTasks("mary");
 
 定义一个服务任务需要好几行XML（这里就可以看到BPEL的影响力）。 当然，在不久的未来，我们希望有工具可以把这部分大量的简化。 一个服务任务需要如下定义：
 
-```
+```xml
 <serviceTask id="MyServiceTask" name="My service task"
-  implementation="Other" operationRef="myOperation" />
-        
+  implementation="Other" operationRef="myOperation" />    
 ```
 
 服务任务需要一个必填的**id**和一个可选的 **name**。**implementation**元素 是用来表示调用服务的类型。可选值是WebService, Other或者Unspecified。 因为我们只实现了Java调用， 现在只能选择**Other**。
 
 服务任务将调用一个操作，**operation**的id 会在**operationRef**属性中引用。 这样一个操作就是下面实例的 **interface**的一部分。每个操作都至少有一个 **输入信息**，并且 最多有一个**输出信息**。
 
-```
+```xml
 <interface id="myInterface"
     name="org.jbpm.MyJavaServicek">
     <operation id="myOperation2" name="myMethod">
@@ -675,14 +674,12 @@ List<Task> tasks = taskService.findPersonalTasks("mary");
       <outMessageRef>outputMessage</outMessageRef>
     </bpmn:operation>
 </interface>
-        
 ```
 
 对于java服务，**接口的名称**用来 指定java类的全类名。**操作的名称** 用来指定将要调用方法名。 输入/输出信息表示着java方法的参数/返回值， 定义如下所示：
 
-```
-<message id="inputMessage" name="input message" structureRef="myItemDefinition1" />
-        
+```xml
+<message id="inputMessage" name="input message" structureRef="myItemDefinition1" />   
 ```
 
 BPMN中很多元素叫做'item感知'，包括这个消息结构。 这意味着它们会在流程执行过程中保存或读取item。 负责这些元素的数据结构需要使用**ItemDefinition**。 在这个环境下，消息指定了它的数据结构， 通过引用 **structureRef**属性中定义的ItemDefinition。
