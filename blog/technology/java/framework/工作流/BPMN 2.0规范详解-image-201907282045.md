@@ -524,7 +524,6 @@ user task被定义为下面的BPMN 2.0 XML：
 
 ```
 <userTask id="myTask" name="My task" />
-        
 ```
 
 根据规范，可以使用多种实现（WebService, WS-humantask，等等）。 通过使用**implementation**属性。 当前，只有标准的jBPM任务机制才可以用，所以这里（还）没有 定义'implementation'属性的功能。
@@ -760,7 +759,6 @@ executionService.startProcessInstanceBykey("scriptTaskExample", variables);
 
 ```
 <manualTask id="myManualTask" name="Call customer" />
-         
 ```
 
 

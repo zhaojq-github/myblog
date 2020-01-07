@@ -143,7 +143,7 @@ AQS(`AbstractQueuedSynchronizer`)，AQS是JDK下提供的一套用于实现基�
 
 如上所述，AQS管理一个关于状态信息的单一整数，该整数可以表现任何状态。比如， `Semaphore`用它来表现剩余的许可数，`ReentrantLock` 用它来表现拥有它的线程已经请求了多少次锁；`FutureTask` 用它来表现任务的状态(尚未开始、运行、完成和取消)
 
-```
+```java
  To use this class as the basis of a synchronizer, redefine the
  * following methods, as applicable, by inspecting and/or modifying
  * the synchronization state using {@link #getState}, {@link
