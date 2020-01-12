@@ -263,7 +263,7 @@ Finished.
 
 以下代码显示如何使用`TransferQueue`。
 
-```
+```java
 import java.util.concurrent.LinkedTransferQueue;
 import java.util.concurrent.TransferQueue;
 import java.util.concurrent.atomic.AtomicInteger;
