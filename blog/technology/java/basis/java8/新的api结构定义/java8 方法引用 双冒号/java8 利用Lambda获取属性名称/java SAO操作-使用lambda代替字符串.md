@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 # java SAO操作-使用lambda代替字符串
 
 /Users/jerryye/backup/studio/AvailableCode/basis/java8/function_consumer_predicate/function_consumer_predicate_demo

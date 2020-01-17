@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 # java8 利用Lambda获取属性名称  双冒号
 
 /Users/jerryye/backup/studio/AvailableCode/basis/java8/function_consumer_predicate/function_consumer_predicate_demo
