@@ -12,9 +12,12 @@ CREATE INDEX index_name table_name (LastName, FirstName);
 
 那么，这两种语法有什么区别呢？  
 在网上找了一下，在一个英文网站上，总结了下面几个区别，我翻译出来，如下：
+
 1、CREATE INDEX必须提供索引名，对于ALTER TABLE，将会自动创建，如果你不提供；
+
 2、CREATE INDEX一个语句一次只能建立一个索引，ALTER TABLE可以在一个语句建立多个，如：
       ALTER TABLE HeadOfState ADD PRIMARY KEY (ID), ADD INDEX (LastName,FirstName);
+
 3、只有ALTER TABLE 才能创建主键，
 
 英文原句如下：
