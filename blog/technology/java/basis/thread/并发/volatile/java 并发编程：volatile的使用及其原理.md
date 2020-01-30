@@ -18,7 +18,7 @@
 
 　　我们从一个最经典的例子来分析重排序问题。大家应该都很熟悉单例模式的实现，而在并发环境下的单例实现方式，我们通常可以采用双重检查加锁（DCL）的方式来实现。其源码如下：
 
-```
+```java
 package com.paddx.test.concurrent;
 
 public class Singleton {
@@ -326,5 +326,5 @@ public class MemoryBarrier {
 
  博客地址：<https://www.cnblogs.com/paddix/p/5428507.html>
 
- 
+ 
 
