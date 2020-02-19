@@ -63,7 +63,7 @@ var copy = Object.assign({}, obj);
 console.log(copy); // { a: 1 }
 ```
 
-### 深拷贝问题[节](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Deep_Clone)
+### 深拷贝问题[节](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Deep_Clone) 重点关注
 
 针对深拷贝，需要使用其他方法，因为 `Object.assign()`拷贝的是属性值。假如源对象的属性值是一个指向对象的引用，它也只拷贝那个引用值。
 
