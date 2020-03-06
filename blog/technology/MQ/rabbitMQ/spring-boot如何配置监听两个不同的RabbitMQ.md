@@ -54,7 +54,7 @@ private String baddress;
 
 #### 3.RabbitMqConfig中配置链接
 
-```
+```java
 @Bean(name="uConnectFactory")
 @Primary
 public ConnectionFactory uConnectFactory() {
@@ -74,14 +74,14 @@ public ConnectionFactory bConnectFactory() {
     connectionFactory.setPassword(rpbpassword);
     connectionFactory.setVirtualHost(rpbvhost);
     return connectionFactory;
-}1234567891011121314151617181920
+} 
 ```
 
 @Primary标签指若不指定链接，默认选择链接，在配置了多个链接必须添加@Primary标签，否则有可能会找不到对应的rabbitMQ的连接。
 
 #### 4.配置监听连接
 
-```
+```java
 @Bean(name="uRabbitListenerContainerFactory")
 public SimpleRabbitListenerContainerFactory uRabbitListenerContainerFactory(
         @Qualifier("uConnectFactory") ConnectionFactory connectionFactory,
@@ -134,12 +134,12 @@ public SimpleRabbitListenerContainerFactory brabbitListenerContainerFactory(
         factory.setTxSize(listenerConfig.getTransactionSize());
     }
     return factory;
-} 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253
+}  
 ```
 
 #### 5.配置消息代理服务器
 
-```
+```java
 @Bean(name="uAmqpAdmin")
 public AmqpAdmin amqpAdmin(@Qualifier("uConnectFactory") ConnectionFactory connectionFactory) {
     RabbitAdmin admin = new RabbitAdmin(connectionFactory);
@@ -152,7 +152,7 @@ public AmqpAdmin rpdAmqpAdmin(@Qualifier("bConnectionFactory") ConnectionFactory
     RabbitAdmin admin = new RabbitAdmin(connectionFactory);
     admin.setAutoStartup(false);
     return admin;
-} 12345678910111213
+}  
 ```
 
 #### 6.具体监听队列及使用配置

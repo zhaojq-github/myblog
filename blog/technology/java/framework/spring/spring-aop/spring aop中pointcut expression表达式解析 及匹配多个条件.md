@@ -31,18 +31,20 @@ Spring中事务控制相关配置：
 
 ​    表达式例子如下：
 
-　　任意公共方法的执行：
-　　　　execution(public * *(..))
-　　任何一个以“set”开始的方法的执行：
-　　　　execution(* set*(..))
-　　AccountService 接口的任意方法的执行：
-　　　　execution(* com.xyz.service.AccountService.*(..))
-　　定义在service包里的任意方法的执行：
-　　　　execution(* com.xyz.service.*.*(..))
-　　定义在service包和所有子包里的任意类的任意方法的执行：
-　　　　execution(* com.xyz.service..*.*(..))
-　　定义在pointcutexp包和所有子包里的JoinPointObjP2类的任意方法的执行：
-　　　　execution(* com.test.spring.aop.pointcutexp..JoinPointObjP2.*(..))")
+```
+任意公共方法的执行：
+　　execution(public * *(..))
+任何一个以“set”开始的方法的执行：
+　　execution(* set*(..))
+AccountService 接口的任意方法的执行：
+　　execution(* com.xyz.service.AccountService.*(..))
+定义在service包里的任意方法的执行：
+　　execution(* com.xyz.service.*.*(..))
+定义在service包和所有子包里的任意类的任意方法的执行：
+　　execution(* com.xyz.service..*.*(..))
+定义在pointcutexp包和所有子包里的JoinPointObjP2类的任意方法的执行：
+　　execution(* com.test.spring.aop.pointcutexp..JoinPointObjP2.*(..))")
+```
 
 　　在多个表达式之间使用 ||,or表示 或，使用 &&,and表示 与，！表示 非.例如：
 
