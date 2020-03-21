@@ -502,7 +502,7 @@ static void allOfExample() {
 
 ##### 清单 23. 示例代码
 
-```
+```java
 static void allOfAsyncExample() {
     StringBuilder result = new StringBuilder();
     List messages = Arrays.asList("a", "b", "c");

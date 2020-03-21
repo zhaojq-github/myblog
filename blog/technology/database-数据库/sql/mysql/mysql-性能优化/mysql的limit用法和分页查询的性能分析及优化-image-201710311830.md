@@ -1,4 +1,8 @@
-# [MySQL的limit用法和分页查询的性能分析及优化](https://segmentfault.com/a/1190000008859706)
+[TOC]
+
+
+
+# mysql的limit用法和分页查询的性能分析及优化
 
 
 
@@ -105,14 +109,18 @@ id select_type table type possible_keys key key_len ref rows Extra
 查询从第1000000之后的30条记录：
 
 ```mysql
-SQL代码1：平均用时6.6秒 SELECT * FROM `cdb_posts` ORDER BY pid LIMIT 1000000 , 30
+SQL代码1：平均用时6.6秒 
+SELECT * FROM `cdb_posts` ORDER BY pid LIMIT 1000000 , 30
 
-SQL代码2：平均用时0.6秒 SELECT * FROM `cdb_posts` WHERE pid >= (SELECT pid FROM  
+SQL代码2：平均用时0.6秒 
+SELECT * FROM `cdb_posts` WHERE pid >= (SELECT pid FROM  
 `cdb_posts` ORDER BY pid LIMIT 1000000 , 1) LIMIT 30
 
 ```
 
 因为要**取出所有字段内容**，第一种需要跨越大量数据块并取出，而第二种基本通过直接**根据索引字段定位后，才取出相应内容**，效率自然大大提升。对limit的优化，不是直接使用limit，而是首先获取到offset的id，然后直接使用limit size来获取数据。
+
+采用子查询模式,其原理依赖于覆盖索引，当查询的列，均是索引字段时，性能较快，因为其只用遍历索引本身。我们自己创建的非主键索引，都是非聚集索引，其不包含非索引字段，所以数据结构较小，系统能快速遍历。我们知道索引时b+树结构，系统能很容易的知道1000000，位于索引树的位置
 
 可以看出，越往后分页，LIMIT语句的偏移量就会越大，两者速度差距也会越明显。
 
