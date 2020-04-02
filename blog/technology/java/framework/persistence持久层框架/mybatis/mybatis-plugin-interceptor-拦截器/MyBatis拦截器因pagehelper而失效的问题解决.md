@@ -34,7 +34,7 @@ MyBatis的拦截器采用责任链设计模式，多个拦截器之间的责任�
 
 如果@AutoConfigureAfter还是无效则添加参考代码,排除扫描依赖
 
-```
+```java
 @SpringBootApplication
 @ComponentScan(excludeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = MyBatisInterceptorAutoConfiguration.class)})
 public class Application {
