@@ -34,16 +34,16 @@
 
 ### 1. 不存在则插入，存在则更新
 
-### 1.1 on duplicate key update
+#### 1.1 on duplicate key update
 
 如果插入的数据会导致`UNIQUE 索引`或`PRIMARY KEY`发生冲突/重复，则**执行UPDATE语句**，例：
 
-```
+```mysql
 INSERT INTO `student`(`name`, `age`) VALUES('Jack', 19)
   ON DUPLICATE KEY 
   UPDATE `age`=19; -- If will happen conflict, the update statement is executed
 
--- 2 row(s) affected12345
+-- 2 row(s) affected
 ```
 
 这里受影响的行数是`2`，因为数据库中存在`name='Jack'`的数据，如果不存在此条数据，则受影响的行数为`1`
@@ -54,14 +54,14 @@ INSERT INTO `student`(`name`, `age`) VALUES('Jack', 19)
 | ---- | ---- | ---- |
 | 1    | Jack | 19   |
 
-### 1.2 replace into
+#### 1.2 replace into
 
 如果插入的数据会导致`UNIQUE 索引`或`PRIMARY KEY`发生冲突/重复，则**先删除旧数据再插入最新的数据**，例：
 
-```
+```mysql
 REPLACE INTO `student`(`name`, `age`) VALUES('Jack', 18);
 
--- 2 row(s) affected123
+-- 2 row(s) affected 
 ```
 
 这里受影响的行数是`2`，因为数据库中存在`name='Jack'`的数据，并且`id`的值会变成`2`，因为它是先删除旧数据，然后再插入数据，最新的表数据如下：
